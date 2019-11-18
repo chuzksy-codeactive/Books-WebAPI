@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Book.Api.Entities
+namespace Books.Api.Entities
 {
     [Table ("Authors")]
     public class Author

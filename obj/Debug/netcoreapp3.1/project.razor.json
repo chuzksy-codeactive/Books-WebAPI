@@ -1,5 +1,5 @@
 {
-  "FilePath": "/Users/onuchukwuchika/Documents/ASP Core Web API/Book.Api/Book.Api.csproj",
+  "FilePath": "/Users/onuchukwuchika/Documents/ASP Core Web API/Books.Api/Books.Api.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -15129,7 +15129,7 @@
     ],
     "CSharpLanguageVersion": 703
   },
-  "RootNamespace": "Book.Api",
+  "RootNamespace": "Books.Api",
   "Documents": [],
   "SerializationFormat": "0.2"
 }
