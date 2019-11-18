@@ -1,0 +1,13 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*",
+  "connectionStrings": {
+    "libraryDB": "Data Source=.; Initial Catalog=Library; User Id=sa; Password=********; Persist Security Info=True"
+  }
+}
