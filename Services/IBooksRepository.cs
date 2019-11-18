@@ -10,6 +10,5 @@ namespace Books.Api.Services
     {
         Task<IEnumerable<Book>> GetBooksAsync ();
         Task<Book> GetBookAsync (Guid id);
-
     }
 }

@@ -16,7 +16,7 @@ namespace Books.Api.Services
 
         public BooksRepository (BooksContext booksContext)
         {
-            _booksContext = booksContext;
+            _booksContext = booksContext ?? throw new ArgumentNullException(nameof(booksContext));
         }
         public async Task<Book> GetBookAsync (Guid id)
         {
