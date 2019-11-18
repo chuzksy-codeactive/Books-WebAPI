@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-
+using AutoMapper;
+using Books.Api.Models;
 using Books.Api.Services;
 
 using Microsoft.AspNetCore.Mvc;
@@ -12,11 +14,14 @@ namespace Books.Api.Controllers
     public class BooksController : ControllerBase
     {
         private readonly IBooksRepository _bookRepository;
+        private readonly IMapper _mapper;
 
-        public BooksController (IBooksRepository bookRepository)
+        public BooksController (IBooksRepository bookRepository, IMapper mapper)
         {
             _bookRepository = bookRepository ??
                 throw new ArgumentNullException (nameof (bookRepository));
+            _mapper = mapper ?? 
+                throw new ArgumentNullException (nameof (mapper));
         }
 
         [HttpGet]
@@ -24,7 +29,7 @@ namespace Books.Api.Controllers
         {
             var bookEntities = await _bookRepository.GetBooksAsync ();
 
-            return Ok (bookEntities);
+            return Ok (_mapper.Map<IEnumerable<BookDto>>(bookEntities));
         }
 
         [HttpGet ("{id}")]
@@ -37,7 +42,7 @@ namespace Books.Api.Controllers
                 return NotFound ();
             }
 
-            return Ok (bookEntity);
+            return Ok (_mapper.Map<BookDto>(bookEntity));
         }
     }
 }

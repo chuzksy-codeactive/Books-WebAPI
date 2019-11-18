@@ -1,3 +1,5 @@
+using System;
+using AutoMapper;
 using Books.Api.Contexts;
 using Books.Api.Services;
 
@@ -31,6 +33,7 @@ namespace Books.Api
             services.AddDbContext<BooksContext> (o => o.UseSqlServer (connectionString));
 
             services.AddScoped<IBooksRepository, BooksRepository> ();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies ());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
